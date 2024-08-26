@@ -24,15 +24,17 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                       index > 500
                         ? "brightness-100 opacity-50"
                         : index > 255
-                        ? "brightness-150  opacity-75"
-                        : "brightness-200  opacity-100"
+                        ? "brightness-150 opacity-75"
+                        : "brightness-200 opacity-100"
                     }
                     ${
                       frequency > 160
                         ? "bg-purple-700"
                         : frequency > 80
                         ? "bg-pink-700"
-                        : "bg-teal-400"
+                        : frequency > 0
+                        ? "bg-teal-400"
+                        : "bg-zinc-700"
                     }
                 `}
                   style={{ height: frequency > 0 ? frequency : "5px" }}
@@ -54,18 +56,20 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                     rounded-md
                     transition-colors
                     ${
-                      index < 500
-                        ? "brightness-200 opacity-100"
-                        : index < 255
+                      index > 500
+                        ? "brightness-100 opacity-50"
+                        : index > 255
                         ? "brightness-150 opacity-75"
-                        : "brightness-100 opacity-50"
+                        : "brightness-200 opacity-100"
                     }
                     ${
                       frequency > 160
                         ? "bg-purple-700"
                         : frequency > 80
                         ? "bg-pink-700"
-                        : "bg-teal-400"
+                        : frequency > 0
+                        ? "bg-teal-400"
+                        : "bg-zinc-700"
                     }
               `}
                   style={{ height: frequency > 0 ? frequency : "5px" }}
