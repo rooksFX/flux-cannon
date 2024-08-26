@@ -1,3 +1,5 @@
+import "./audioVisualizer.css";
+
 interface Props {
   frequencies: number[] | null;
 }
@@ -22,18 +24,18 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                     transition-colors
                     ${
                       index > 500
-                        ? "brightness-100 opacity-50"
+                        ? "brightness-100 opacity-50 saturate-100"
                         : index > 255
-                        ? "brightness-150 opacity-75"
-                        : "brightness-200 opacity-100"
+                        ? "brightness-150 opacity-75 saturate-150"
+                        : "brightness-200 opacity-100 saturate-200"
                     }
                     ${
                       frequency > 160
-                        ? "bg-purple-700"
+                        ? "bg-purple-700 "
                         : frequency > 80
-                        ? "bg-pink-700"
+                        ? "bg-pink-700 "
                         : frequency > 0
-                        ? "bg-teal-400"
+                        ? "bg-teal-400 "
                         : "bg-zinc-700"
                     }
                 `}
@@ -57,10 +59,10 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                     transition-colors
                     ${
                       index > 500
-                        ? "brightness-100 opacity-50"
+                        ? "brightness-100 opacity-50 saturate-100"
                         : index > 255
-                        ? "brightness-150 opacity-75"
-                        : "brightness-200 opacity-100"
+                        ? "brightness-150 opacity-75 saturate-150"
+                        : "brightness-200 opacity-100 saturate-200"
                     }
                     ${
                       frequency > 160

@@ -19,7 +19,7 @@ export const AudioPlayer = () => {
       className="flex flex-col justify-center items-center"
     >
       <AudioVisualizer frequencies={frequencies} />
-      <div className="absolute bottom-12 flex justify-center items-center flex-col">
+      <div className="absolute p-4 rounded-lg bottom-12 flex justify-center items-center flex-col transition-shadow shadow-xl hover:shadow-teal-900 hover:cursor-pointer">
         <input
           className="p-2 text-justify self-center m-auto"
           type="file"
