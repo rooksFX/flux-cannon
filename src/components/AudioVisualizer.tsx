@@ -21,6 +21,7 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                     w-[5px]
                     mr-[4px]
                     rounded-md
+                    hover:invert
                     transition-colors
                     ${
                       index > 500
@@ -56,6 +57,7 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
                     w-[5px]
                     mr-[4px]
                     rounded-md
+                    hover:invert
                     transition-colors
                     ${
                       index > 500
