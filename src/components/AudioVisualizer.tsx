@@ -1,5 +1,5 @@
 import "./audioVisualizer.css";
-import { LineVisualizer } from "./LineVisualizer";
+// import { LineVisualizer } from "./LineVisualizer";
 import RingVisualizer from "./RIngVIsualizer";
 
 interface Props {

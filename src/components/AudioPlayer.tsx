@@ -1,4 +1,3 @@
-import { ChangeEvent, useState } from "react";
 import { useAudioVisualizer } from "../hooks/useAudioVisualizer";
 import { AudioVisualizer } from "./AudioVisualizer";
 
