@@ -52,16 +52,17 @@ export const useAudioVisualizer = () => {
     analyser.connect(audioContext.destination);
 
     const bufferLength = analyser.frequencyBinCount;
-    // console.log(" --------- bufferLength: ", bufferLength);
     const dataArray = new Uint8Array(bufferLength);
     dataArrayRef.current = dataArray;
     setFrequencies([...dataArray]);
 
     const update = () => {
-      analyser.getByteFrequencyData(dataArray);
+      analyser.getByteFrequencyData(dataArray);;
+      // console.log(" --------- dataArray: ", dataArray.length);
       //   console.log(dataArray[0]); // Example: log the first frequency bin value
       dataArrayRef.current = dataArray;
       setFrequencies([...dataArray]);
+      // setFrequencies([...dataArray.slice(0, 800)]);
       // console.log(' --------- dataArrayRef.current: ', dataArrayRef.current);
       requestAnimationFrame(update);
     };

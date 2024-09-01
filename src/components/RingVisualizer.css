@@ -1,0 +1,18 @@
+.ring-container {
+    position: relative;
+    width: 360px; /* Adjust as needed */
+    height: 360px; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  .ring-div {
+    position: absolute;
+    width: 4px; /* Adjust as needed */
+    height: 2px; /* Adjust as needed */
+    background-color: #3498db; /* Adjust color as needed */
+    border-radius: 50%; /* Makes the divs circular */
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+  }
+  
