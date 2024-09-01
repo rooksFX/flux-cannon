@@ -29,8 +29,8 @@ export const AudioPlayer = () => {
         /> */}
         {/* {musicFile ? (<audio ref={audioRef} controls src={window.URL.createObjectURL(musicFile)} />) : null} */}
         {/* <audio ref={audioRef} controls src={musicFile ?? ""} /> */}
-        <div className="text-zinc-700 my-2">imma try it out</div>
-        <audio ref={audioRef} controls src="imma_try_it_out.mp3" />
+        <div className="text-zinc-700 my-2">epic-cinematic-trailer</div>
+        <audio ref={audioRef} controls src="epic-cinematic-trailer.mp3" />
       </div>
     </div>
   );

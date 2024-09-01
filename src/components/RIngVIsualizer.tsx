@@ -14,7 +14,7 @@ const RingVisualizer: React.FC<RingVisualizerProps> = ({
 }) => {
   //   console.log(" -------- frequencies.length: ", frequencies?.length);
   return (
-    <div className="ring-container relative flex justify-center items-center w-[240px] h-[240px] border border-teal-700 rounded-full motion-safe:animate-spin-slow">
+    <div className="ring-container relative flex justify-center items-center w-[240px] h-[240px] rounded-full motion-safe:animate-spin-slow">
       {frequencies?.map((frequency, index) => (
         <div
           className="absolute flex w-[20px] h-[120px] origin-bottom"
@@ -27,22 +27,27 @@ const RingVisualizer: React.FC<RingVisualizerProps> = ({
           <div
             className={`${
               frequency === 0 ? "bg-zinc-700" : color
-            } w-[5px] h-[5px] ${
+            } w-[5px]
+            ${
               frequency === 0 ? "" : type === "bits" ? "glow-pink" : "glow"
             }
             rounded-full
+            transform-gpu
             `}
             style={{
               transform: `translateY(-${frequency}px)`,
               ...(type === "bar" && {
-                height: frequency === 0 ? 5 : frequency,
+                height: frequency === 0 ? 1 : frequency / 2,
+              }),
+              ...(type === "bits" && {
+                height: frequency === 0 ? 1 : 5,
               }),
             }}
           ></div>
         </div>
       ))}
 
-      <div className="text-zinc-700 motion-safe:animate-spin-reverse animate-pulse">
+      <div className="text-zinc-700 motion-safe:animate-spin-reverse">
         rfx / Flux Cannon
       </div>
     </div>
