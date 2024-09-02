@@ -37,12 +37,21 @@ const RingVisualizer: React.FC<RingVisualizerProps> = ({
             style={{
               transform: `translateY(-${frequency}px)`,
               ...(type === "bar" && {
-                height: frequency === 0 ? 1 : frequency / 2,
+                height: frequency === 0 ? 1 : frequency / 4,
               }),
               ...(type === "bits" && {
                 height: frequency === 0 ? 1 : 5,
               }),
             }}
+            // style={{
+            //   transform: `translateY(-${frequency}px)`,
+            //   ...(type === "bar" && {
+            //     height: frequency === 0 ? 1 : frequency / 2,
+            //   }),
+            //   ...(type === "bits" && {
+            //     height: frequency === 0 ? 1 : 5,
+            //   }),
+            // }}
           ></div>
         </div>
       ))}

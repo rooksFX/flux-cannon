@@ -17,12 +17,12 @@ export const AudioVisualizer = ({ frequencies }: Props) => {
       </div> */}
       <div className="absolute size-full flex justify-center items-center">
         <RingVisualizer
-          frequencies={frequencies?.length ? frequencies?.slice(100, 720) : []}
+          frequencies={frequencies?.length ? frequencies?.slice(80, 720) : []}
         />
       </div>
       <div className="absolute size-full flex justify-center items-center">
         <RingVisualizer
-          frequencies={frequencies?.length ? frequencies?.slice(720, 1024) : []}
+          frequencies={frequencies?.length ? frequencies?.slice(720, frequencies?.length) : []}
           color="bg-teal-700 glow"
           type="bar"
         />

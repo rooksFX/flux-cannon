@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useAudioVisualizer } from "../hooks/useAudioVisualizer";
 import { AudioVisualizer } from "./AudioVisualizer";
 
 export const AudioPlayer = () => {
   const { audioRef, frequencies } = useAudioVisualizer();
+  const [selectedMusic, setSelectedMusic] = useState("epic-cinematic-trailer.mp3");
   // const [musicFile, setMusicFile] = useState<string | null>(null);
 
   // const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -29,8 +31,13 @@ export const AudioPlayer = () => {
         /> */}
         {/* {musicFile ? (<audio ref={audioRef} controls src={window.URL.createObjectURL(musicFile)} />) : null} */}
         {/* <audio ref={audioRef} controls src={musicFile ?? ""} /> */}
-        <div className="text-zinc-700 my-2">epic-cinematic-trailer</div>
-        <audio ref={audioRef} controls src="epic-cinematic-trailer.mp3" />
+        <select className="m-2 p-2 bg-zinc-700 rounded-md" onChange={(e) => setSelectedMusic(e.target.value)}>
+          <option value="epic-cinematic-trailer.mp3">epic-cinematic-trailer</option>
+          <option value="bass_cannon.mp3">bass_cannon</option>
+          <option value="bangarang.mp3">bangarang</option>
+          <option value="imma_try_it_out.mp3">imma_try_it_out</option>
+        </select>
+        <audio ref={audioRef} controls src={selectedMusic} />
       </div>
     </div>
   );
